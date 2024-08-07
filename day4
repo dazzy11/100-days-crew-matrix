@@ -1,0 +1,53 @@
+Given an array arr, return the second largest distinct element from an array. If the second largest element doesn't exist then return -1.
+
+Examples:
+
+Input: arr = [12, 35, 1, 10, 34, 1]
+Output: 34
+Explanation: The largest element of the array is 35 and the second largest element is 34.
+  //{ Driver Code Starts
+// Initial Template for Java
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+        while (t-- > 0) {
+            List<Integer> arr = new ArrayList<>();
+            String input = sc.nextLine();
+            Scanner ss = new Scanner(input);
+            while (ss.hasNextInt()) {
+                arr.add(ss.nextInt());
+            }
+            Solution ob = new Solution();
+            int ans = ob.print2largest(arr);
+            System.out.println(ans);
+        }
+    }
+}
+
+// } Driver Code Ends
+
+
+// User function Template for Java
+
+class Solution {
+    public int print2largest(List<Integer> arr) {
+        // Code Here
+        int lar=Integer.MIN_VALUE,seclar=Integer.MIN_VALUE ;
+        for(int i=0;i<arr.size();i++){
+            if(arr.get(i)>lar){
+                lar=arr.get(i);
+                seclar=arr.get(i);
+            }
+            else if(arr.get(i)>seclar&&arr.get(i)!=lar){
+                seclar=arr.get(i);
+            }
+        }
+        return seclar;
+    }
+}
