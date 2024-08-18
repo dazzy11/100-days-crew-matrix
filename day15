@@ -1,0 +1,15 @@
+Check Whether or Not the Number is an Automorphic Number in Java
+Given an integer input, the objective is to check whether or not the Number is an automorphic number or not. To do so we’ll check whether the square if the number ends with the number itself of not. For a number to be Automorphic, it’s square has to end with the number itself. 
+  class HelloWorld {
+    public static void main(String[] args) {
+        int a=4;
+        int b=a*a;
+        int c=b%10;
+        if(c==a){
+                    System.out.println("Automorphic ");
+        }
+        else
+                System.out.println("no Automorphic ");
+
+    }
+}
